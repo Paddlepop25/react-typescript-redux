@@ -30,7 +30,9 @@ const FestivalsInput: React.FC<FestivalProps> = ({ submitFestival }) => {
         placeholder='Gong xi fa cai 🍊🍊'
       />
       &nbsp;
-      <button onClick={addFestival}>Add festival 🎆</button>
+      <button onClick={addFestival} disabled={festival === ''}>
+        Add festival 🎆
+      </button>
     </>
   )
 }

@@ -13,7 +13,10 @@ const FestivalsDisplay = () => {
     dispatch(inputFestival(festive))
   }
 
-  // const festives = useSelector<FestivalState, FestivalState['festivals']>((state: RootState) => state.festives.festivals)
+  // type is correct, but cannot reach state.festives.festivals
+  // const festives = useSelector<FestivalState, FestivalState['festivals']>(
+  //   (state) => state.festivals
+  // )
   const festives = useSelector((state: RootState) => state.festives.festivals)
 
   return (
