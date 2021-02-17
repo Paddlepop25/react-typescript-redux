@@ -5,7 +5,7 @@ import {
   UserAction,
 } from './UserTypes'
 
-interface UserReducerState {
+interface UserState {
   loading: boolean
   users: object[]
   error: string
@@ -17,10 +17,7 @@ const initialState = {
   error: '',
 }
 
-const userReducer = (
-  state: UserReducerState = initialState,
-  action: UserAction
-) => {
+const userReducer = (state: UserState = initialState, action: UserAction) => {
   switch (action.type) {
     case FETCH_USERS_REQUEST: {
       return {
