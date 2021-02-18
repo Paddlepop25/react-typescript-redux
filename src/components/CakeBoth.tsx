@@ -1,12 +1,17 @@
 import React from 'react'
+import { Box } from '../styles/styledTheme'
 import Cake from './Cake'
 import CakeChoose from './CakeChoose'
+import Header from './Header'
 
 const CakeBoth = () => {
   return (
     <>
-      <Cake />
-      <CakeChoose />
+      <Header />
+      <Box>
+        <Cake />
+        <CakeChoose />
+      </Box>
     </>
   )
 }

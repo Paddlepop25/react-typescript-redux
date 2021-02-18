@@ -21,18 +21,18 @@ const FestivalsInput: React.FC<FestivalProps> = ({ submitFestival }) => {
 
   return (
     <>
-      <label>What's your favourite festival day?</label>
-      <br />
-      <input
-        type='text'
-        value={festival}
-        onChange={inputFestival}
-        placeholder='Gong xi fa cai 🍊🍊'
-      />
-      &nbsp;
-      <button onClick={addFestival} disabled={festival === ''}>
-        Add festival 🎆
-      </button>
+        <label>What's your favourite festival day?</label>
+        <br />
+        <input
+          type='text'
+          value={festival}
+          onChange={inputFestival}
+          placeholder='Gong xi fa cai'
+        />
+        &nbsp;
+        <button onClick={addFestival} disabled={festival === ''}>
+          Add festival 🎆
+        </button>
     </>
   )
 }

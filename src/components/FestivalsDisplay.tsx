@@ -5,6 +5,7 @@ import inputFestival from '../store/Festivals/FestivalActions'
 import Header from './Header'
 import { RootState } from '../store/rootReducer'
 import { FestivalState } from '../store/Festivals/FestivalReducer'
+import { Box } from '../styles/styledTheme'
 
 const FestivalsDisplay = () => {
   const dispatch = useDispatch()
@@ -22,18 +23,20 @@ const FestivalsDisplay = () => {
   return (
     <>
       <Header />
-      <h3>Festivals 🎄🕯️🎁🎵🧑‍🚒</h3>
-      <FestivalsInput submitFestival={submitFestival} />
-      <hr />
-      <ol>
-        {festives.map((festive) => {
-          return (
-            <div key={festive}>
-              <li>{festive}</li>
-            </div>
-          )
-        })}
-      </ol>
+      <Box>
+        <h3>Festivals 🎄🕯️🎁🎵🍊</h3>
+        <FestivalsInput submitFestival={submitFestival} />
+        <hr />
+        <ol>
+          {festives.map((festive) => {
+            return (
+              <div key={festive}>
+                <li>{festive}</li>
+              </div>
+            )
+          })}
+        </ol>
+      </Box>
     </>
   )
 }
