@@ -39,6 +39,7 @@ const Users = () => {
                 <p>Email: {user.email}</p>
                 <p>Phone: {user.phone}</p>
                 {/* <p>Address: {JSON.stringify(user.address)}</p> */}
+                <h4>Company</h4>
                 {Object.entries(user.company).map(([key, value]) => {
                   return (
                     <div key={key}>
