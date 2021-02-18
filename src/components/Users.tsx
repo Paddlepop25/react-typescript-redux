@@ -7,7 +7,7 @@ import Header from './Header'
 
 const Users = () => {
   const users = useSelector((state: RootState) => state.usersData)
-  console.log('users >>> ', users)
+  // console.log('users >>> ', users)
 
   const dispatch = useDispatch()
 
@@ -39,14 +39,14 @@ const Users = () => {
                 <p>Email: {user.email}</p>
                 <p>Phone: {user.phone}</p>
                 {/* <p>Address: {JSON.stringify(user.address)}</p> */}
-                {Object.keys(JSON.stringify(user.company)).map((key, i) => (
-                  <p key={i}>
-                    <span>
-                      {key}: {user.company[key]}
-                    </span>
-                    {/* <span>name: Abernathy Group</span> */}
-                  </p>
-                ))}
+                {Object.entries(user.company).map(([key, value]) => {
+                  return (
+                    <div key={key}>
+                      {key} : {value}
+                    </div>
+                  )
+                })}
+
                 <hr />
               </div>
             )
