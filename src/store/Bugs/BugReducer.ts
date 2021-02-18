@@ -1,4 +1,4 @@
-import { ADD_BUG } from './BugTypes'
+import { ADD_BUG, DELETE_BUG, UPDATE_BUG } from './BugTypes'
 
 let id = 0
 
@@ -27,6 +27,14 @@ const bugReducer = (state: BugState[] = initialState, action: any) => {
           resolved: false,
         },
       ]
+    }
+    case UPDATE_BUG: {
+      return state.map((bug) =>
+        bug.id !== action.payload.id ? bug : { ...bug, resolved: true }
+      )
+    }
+    case DELETE_BUG: {
+      return state.filter((bug) => bug.id !== action.payload.id)
     }
     default:
       return state

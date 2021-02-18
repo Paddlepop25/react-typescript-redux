@@ -8,22 +8,22 @@ import {
 } from './BugTypes'
 
 // can return object like this and the one below?
-export const addBug = (description: string): AddBugAction => {
+export const addBug = (description: string): AddBugAction => ({
+  type: ADD_BUG,
+  payload: {
+    description,
+  },
+})
+
+// diff way of returning
+export const updateBug = (id: number): ResolveBugAction => {
   return {
-    type: ADD_BUG,
+    type: UPDATE_BUG,
     payload: {
-      description,
+      id,
     },
   }
 }
-
-// diff way of returning
-export const updateBug = (id: number): ResolveBugAction => ({
-  type: UPDATE_BUG,
-  payload: {
-    id,
-  },
-})
 
 export const deleteBug = (id: number): DeleteBugAction => ({
   type: DELETE_BUG,

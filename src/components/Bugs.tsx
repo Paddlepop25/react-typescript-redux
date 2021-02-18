@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { addBug, deleteBug, updateBug } from '../store/Bugs/BugAction'
 import { RootState } from '../store/rootReducer'
 import { Box } from '../styles/styledTheme'
 import Header from './Header'
@@ -13,14 +14,22 @@ const Bugs: React.FC = () => {
   const dispatch = useDispatch()
 
   const bugs = useSelector((state: RootState) => state.bugs)
-  console.log(bugs)
+  // console.log(bugs)
 
-  const addBug = (description: string) => {
+  const bugAdded = (description: string) => {
     description === ''
       ? alert('Please add a bug')
       : dispatch(addBug(description)) // MAXIMUM STACK CALL
     setBug('')
-    console.log(description)
+    // console.log(description)
+  }
+
+  const bugResolved = (id: number) => {
+    dispatch(updateBug(id))
+  }
+
+  const bugDeleted = (id: number) => {
+    dispatch(deleteBug(id))
   }
 
   return (
@@ -35,19 +44,26 @@ const Bugs: React.FC = () => {
           placeholder='name your bug 🕷️'
         />
         &nbsp;
-        <button onClick={() => addBug(bug)}>Add bug</button>
-        <button>Resolve bug</button>
-        <button>Delete bug</button>
+        <button onClick={() => bugAdded(bug)}>Add bug</button>
         <hr />
-        {/* {bugs.map((bug) => {
-        return (
-          <div key={bug.id}>
-            <p>Id: {bug.id}</p>
-            <p>Description: {bug.description}</p>
-            <p>Resolved: {bug.resolved}</p>
-          </div>
-        )
-      })} */}
+        {bugs.map((bug) => {
+          if (bug.id !== 0)
+            return (
+              <div key={bug.id}>
+                <p>Id: {bug.id}</p>
+                <p>Description: {bug.description}</p>
+                <p>Resolved: {bug.resolved.toString()}</p>
+                <button
+                  onClick={() => bugResolved(bug.id)}
+                  disabled={bug.resolved}
+                >
+                  Resolve bug
+                </button>
+                &nbsp;
+                <button onClick={() => bugDeleted(bug.id)}>Delete bug</button>
+              </div>
+            )
+        })}
       </Box>
     </>
   )

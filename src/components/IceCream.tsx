@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import buyIceCream from '../store/IceCream/IceCreamActions'
 import { RootState } from '../store/rootReducer'
+import ButtonStyle from '../styles/styledButtonTheme'
 import { Box } from '../styles/styledTheme'
 import Header from './Header'
 
@@ -24,6 +25,14 @@ const IceCream = () => {
         <button onClick={buyOneIceCream} disabled={numOfIceCreams <= 0}>
           Buy 1 icecream
         </button>
+        &nbsp;
+        <ButtonStyle
+          onClick={buyOneIceCream}
+          style={{ display: numOfIceCreams <= 0 ? 'none' : '' }}
+          disabled={numOfIceCreams <= 0}
+        >
+          Buy 1 icecream
+        </ButtonStyle>
       </Box>
     </>
   )
