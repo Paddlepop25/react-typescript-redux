@@ -7,7 +7,7 @@ import Header from './Header'
 
 const Users: React.FC = () => {
   const users = useSelector((state: RootState) => state.usersData)
-  // console.log('users >>> ', users)
+  console.log('users >>> ', users)
 
   const dispatch = useDispatch()
 
