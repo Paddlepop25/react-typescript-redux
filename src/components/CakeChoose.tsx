@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import buyCake from '../store/Cake/CakeActions'
 import { RootState } from '../store/rootReducer'
 
-const CakeChoose = () => {
+const CakeChoose: React.FC = () => {
   const { numOfCakes } = useSelector((state: RootState) => state.cake)
 
   const [inputCakes, setInputCakes] = React.useState(2)

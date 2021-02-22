@@ -16,7 +16,7 @@ const linkStyle = {
   textDecoration: 'none',
 }
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <>
       <HeaderStyle>

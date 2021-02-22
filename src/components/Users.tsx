@@ -5,7 +5,7 @@ import { fetchUsers } from '../store/Users/UserActions'
 import { Box } from '../styles/styledTheme'
 import Header from './Header'
 
-const Users = () => {
+const Users: React.FC = () => {
   const users = useSelector((state: RootState) => state.usersData)
   // console.log('users >>> ', users)
 

@@ -7,7 +7,7 @@ import { RootState } from '../store/rootReducer'
 import { FestivalState } from '../store/Festivals/FestivalReducer'
 import { Box } from '../styles/styledTheme'
 
-const FestivalsDisplay = () => {
+const FestivalsDisplay: React.FC = () => {
   const dispatch = useDispatch()
 
   const submitFestival = (festive: string) => {

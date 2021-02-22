@@ -6,7 +6,7 @@ import ButtonStyle from '../styles/styledButtonTheme'
 import { Box } from '../styles/styledTheme'
 import Header from './Header'
 
-const IceCream = () => {
+const IceCream: React.FC = () => {
   const { numOfIceCreams } = useSelector((state: RootState) => state.iceCream)
 
   const dispatch = useDispatch()

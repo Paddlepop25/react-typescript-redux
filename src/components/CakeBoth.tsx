@@ -4,7 +4,7 @@ import Cake from './Cake'
 import CakeChoose from './CakeChoose'
 import Header from './Header'
 
-const CakeBoth = () => {
+const CakeBoth: React.FC = () => {
   return (
     <>
       <Header />
