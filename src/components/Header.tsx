@@ -44,6 +44,10 @@ const Header: React.FC = () => {
         <Link to='/bugs' style={linkStyle}>
           Bugs
         </Link>
+        |
+        <Link to='/pokemon' style={linkStyle}>
+          Pokemon
+        </Link>
       </HeaderStyle>
     </>
   )
