@@ -16,7 +16,7 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ weatherData }) => {
       </h3>
       <p>{weatherData.weather[0].description}</p>
       <img
-        src={`http://openweather.org/img/wn/${weatherData.weather[0].icon}.png`}
+        src={`https://openweather.org/img/wn/${weatherData.weather[0].icon}.png`}
         alt={weatherData.name}
       />
       <p>

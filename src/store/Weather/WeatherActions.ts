@@ -57,7 +57,6 @@ export const getWeather = (city: string) => async (
   }
 }
 
-// Response {type: "cors", url: "https://api.openweathermap.org/data/2.5/weather?q=paris&appid=098f84a321352909a33a88c9828e32ed", redirected: false, status: 200, ok: true, …}
 // body: (...)
 // bodyUsed: false
 // headers: Headers {}
@@ -66,5 +65,5 @@ export const getWeather = (city: string) => async (
 // status: 200
 // statusText: "OK"
 // type: "cors"
-// url: "https://api.openweathermap.org/data/2.5/weather?q=paris&appid=098f84a321352909a33a88c9828e32ed"
+// url: "https://api.openweathermap.org/data/2.5/weather?q=paris&appid="
 // __proto__: Response
