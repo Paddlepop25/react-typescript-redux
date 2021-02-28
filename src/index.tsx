@@ -16,6 +16,7 @@ import Users from './components/Users'
 import FestivalsDisplay from './components/FestivalsDisplay'
 import Bugs from './components/Bugs'
 import Pokemon from './components/Pokemon'
+import Weather from './components/Weather/Weather'
 
 // style
 import { ThemeProvider } from 'styled-components'
@@ -33,6 +34,7 @@ ReactDOM.render(
           <Route exact path='/festivals' component={FestivalsDisplay} />
           <Route exact path='/bugs' component={Bugs} />
           <Route exact path='/pokemon' component={Pokemon} />
+          <Route exact path='/weather' component={Weather} />
         </Router>
       </ThemeProvider>
     </Provider>

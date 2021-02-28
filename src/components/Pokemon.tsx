@@ -4,7 +4,7 @@ import { getPokemon } from '../store/Pokemon/PokemonActions'
 import { RootState } from '../store/rootReducer'
 import Header from './Header'
 import { Box } from '../styles/styledTheme'
-import { PokemonInputStyle } from '../store/Pokemon/PokemonStyles'
+import { PokemonInputStyle } from './PokemonStyles'
 
 const Pokemon = () => {
   const dispatch = useDispatch()
@@ -28,7 +28,6 @@ const Pokemon = () => {
   const pokemonLoading = pokemonState.loading
   const pokemonData = pokemonState.pokemon
   const pokemonFail = pokemonState.error
-  console.log('IMG', pokemonData?.sprites.front_default)
   return (
     <>
       <Header />
@@ -37,11 +36,12 @@ const Pokemon = () => {
           type='text'
           value={pokemonInput}
           onChange={handleChange}
-          placeholder='      🦖...'
+          placeholder='find a pokemon 🦖...'
         />
         &nbsp;
         <button onClick={handleSearch}>🔍</button>
         <hr />
+        {pokemonLoading && <code>Loading...</code>}
         {pokemonData && (
           <>
             <h2>

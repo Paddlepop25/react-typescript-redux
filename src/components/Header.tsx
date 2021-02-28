@@ -48,6 +48,10 @@ const Header: React.FC = () => {
         <Link to='/pokemon' style={linkStyle}>
           Pokemon
         </Link>
+        |
+        <Link to='/weather' style={linkStyle}>
+          Weather
+        </Link>
       </HeaderStyle>
     </>
   )
