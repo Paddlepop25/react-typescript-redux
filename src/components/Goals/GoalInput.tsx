@@ -24,6 +24,7 @@ const GoalInput: React.FC<GoalInputProps> = ({ addGoal }) => {
 				type='text'
 				placeholder='enter a goal...'
 			/>
+			&nbsp;
 			<button onClick={handleGoalAdd} type='button'>
 				Add goal
 			</button>
