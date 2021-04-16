@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,KACE,iBACF,CAEA,GACE,gBAAiB,CACjB,SAAU,CACV,UACF","file":"main.f440bb2b.chunk.css","sourcesContent":[".App {\n  text-align: center;\n}\n\nhr {\n  margin: 20px auto;\n  width: 80%;\n  opacity: 0.5;\n}\n"]}
