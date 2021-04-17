@@ -31,7 +31,8 @@ app.post('/savegoals', (req, res) => {
 app.get('/getgoals', (req, res) => {
   res.status(200);
   const goals = db.get('goals').value();
-  res.json(goals);
+  console.log('getgoals --> ', goals);
+  return res.json(goals);
 });
 
 app.listen(PORT, () => {

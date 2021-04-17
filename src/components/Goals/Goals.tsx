@@ -12,6 +12,7 @@ import { Box } from "../../styles/styledTheme";
 
 const Goals = () => {
 	const goals = useSelector((state: RootState) => state.goals.goals);
+	console.log("goals --->", goals); // should be ['1ststring', '2ndstring']
 
 	const dispatch = useDispatch();
 
@@ -20,7 +21,8 @@ const Goals = () => {
 	};
 
 	const handleGoalsSave = () => {
-		dispatch(saveGoals()); // thunk action as function, so need ()
+		dispatch(saveGoals(goals));
+		alert("goals have been saved 💌");
 	};
 
 	const handleGoalsLoad = () => {
@@ -38,7 +40,6 @@ const Goals = () => {
 						return <li key={goal + index}>{goal}</li>;
 					})}
 				</ul>
-				<hr />
 				<button onClick={handleGoalsSave}>Save goals to database</button>&nbsp;
 				<button onClick={handleGoalsLoad}>Load goals from database</button>
 			</Box>
