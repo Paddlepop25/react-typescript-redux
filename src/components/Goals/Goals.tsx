@@ -2,7 +2,11 @@ import React from "react";
 import Header from "../Header";
 import GoalInput from "./GoalInput";
 import { useDispatch, useSelector } from "react-redux";
-import { addGoalAction } from "../../store/Goals/GoalActions";
+import {
+	addGoalAction,
+	loadGoals,
+	saveGoals,
+} from "../../store/Goals/GoalActions";
 import { RootState } from "../../store/rootReducer";
 import { Box } from "../../styles/styledTheme";
 
@@ -13,6 +17,14 @@ const Goals = () => {
 
 	const addGoal = (goal: string) => {
 		dispatch(addGoalAction(goal));
+	};
+
+	const handleGoalsSave = () => {
+		dispatch(saveGoals()); // thunk action as function, so need ()
+	};
+
+	const handleGoalsLoad = () => {
+		dispatch(loadGoals());
 	};
 
 	return (
@@ -26,6 +38,9 @@ const Goals = () => {
 						return <li key={goal + index}>{goal}</li>;
 					})}
 				</ul>
+				<hr />
+				<button onClick={handleGoalsSave}>Save goals to database</button>&nbsp;
+				<button onClick={handleGoalsLoad}>Load goals from database</button>
 			</Box>
 		</>
 	);

@@ -12,7 +12,7 @@ const GoalInput: React.FC<GoalInputProps> = ({ addGoal }) => {
 	};
 
 	const handleGoalAdd = () => {
-		addGoal(goal);
+		addGoal(goal.trim());
 		setGoal("");
 	};
 
@@ -25,7 +25,7 @@ const GoalInput: React.FC<GoalInputProps> = ({ addGoal }) => {
 				placeholder='enter a goal...'
 			/>
 			&nbsp;
-			<button onClick={handleGoalAdd} type='button'>
+			<button onClick={handleGoalAdd} type='button' disabled={goal == ""}>
 				Add goal
 			</button>
 			<hr />
