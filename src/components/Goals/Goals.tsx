@@ -11,6 +11,7 @@ import { RootState } from "../../store/rootReducer";
 import { Box } from "../../styles/styledTheme";
 
 const Goals = () => {
+	// @ts-ignore
 	const goals = useSelector((state: RootState) => state.goals.goals);
 
 	const dispatch = useDispatch();
@@ -34,11 +35,11 @@ const Goals = () => {
 				<h3>What are your goals this year?</h3>
 				<GoalInput addGoal={addGoal} />
 				<ul>
+					{/* @ts-ignore */}
 					{goals.map((goal, index) => {
 						return <li key={goal + index}>{goal}</li>;
 					})}
 				</ul>
-				<hr />
 				<button onClick={handleGoalsSave}>Save goals to database</button>&nbsp;
 				<button onClick={handleGoalsLoad}>Load goals from database</button>
 			</Box>

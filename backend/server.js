@@ -22,15 +22,15 @@ app.get('/', (req, res) => {
 
 app.post('/savegoals', (req, res) => {
   res.status(200);
-  const goals = req.body;
+  const goals = req.body; // take note may need destructing .goals.goals or {goals} depending on data structure
   console.log(goals); // should be ['1ststring', '2ndstring']
-  db.set('goals', goals).write();
+  db.set('goals', goals).write(); // writes data into db.json
   res.send('SUCCESS in saving goals 🥂');
 });
 
 app.get('/getgoals', (req, res) => {
   res.status(200);
-  const goals = db.get('goals').value();
+  const goals = db.get('goals').value(); // get data from db.json
   res.json(goals);
 });
 

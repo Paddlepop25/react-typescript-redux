@@ -11,4 +11,5 @@ export type DisplayGoalsAction = {
 	payload: string[];
 };
 
-export type GoalTypes = AddGoalAction | DisplayGoalsAction
+// combine different actions
+export type GoalTypes = AddGoalAction | DisplayGoalsAction;
