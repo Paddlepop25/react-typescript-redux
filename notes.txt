@@ -16,3 +16,4 @@ redux-devtools-extension - shows 'Redux' inspector in chrome developer tools
 * can use both together
 
 test token
+2nd test
