@@ -14,3 +14,5 @@ npm library ( see store )
 logger - shows action type and state info in console
 redux-devtools-extension - shows 'Redux' inspector in chrome developer tools
 * can use both together
+
+test token
